@@ -1,2 +1,2 @@
 # GraphQL + NestJS + PostgreSQL
-... Building 🔨
+Building ... 🔨
