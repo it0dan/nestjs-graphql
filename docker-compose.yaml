@@ -1,0 +1,21 @@
+services:
+  pgsql:
+    image: postgres
+    ports:
+      - '5431:5432'
+    container_name: 'graphql-pgsql'
+    restart: always
+    volumes:
+      - .:/home/it0dan/github/nestjs-graphql/volumes/postgresql/data
+    environment:
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: pgpassword
+      POSTGRES_DB: sample-db-for-graphql  
+
+  dbeaver:
+    image: dbeaver/cloudbeaver
+    restart: always
+    ports:
+      - 5430:8978
+    volumes:
+      - .:/home/it0dan/github/nestjs-graphql/volumes/opt/cloudbeaver/CloudBeaverDanServer/cloudbeaver:dev
